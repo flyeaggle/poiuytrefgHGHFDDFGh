@@ -70,7 +70,7 @@ const App = ()=>{
 
       $.ajax({
           type: "POST",
-          url: "http://localhost:5000/send",
+          url: "https://webserver-yvsv.onrender.com/send",
           data: user,
           success(data) {
               console.log(data);
