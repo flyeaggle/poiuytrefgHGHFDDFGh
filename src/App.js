@@ -44,7 +44,9 @@ const App = ()=>{
     fetch('https://api.geoapify.com/v1/ipinfo?apiKey=44db379787c14bccb69d3de62462aefb')
     .then(req=> req.json())
     .then(res=>{
-      setCountry(res.country.name);
+      setTimeout(()=>{
+        setCountry(res.country.name);
+      }, 2500)
     })
     .catch(e=>console.error('!!👻'))
     
